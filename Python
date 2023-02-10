@@ -1,0 +1,58 @@
+1 rev sentence is equal
+
+s=input("Enter the phrase: ")
+str="" 
+for i in s:
+    if i>='A' and i<='Z' or i>='a' and i<='z' :
+        str+=i
+str=str.lower()
+#print(str)
+if str==str[::-1]:
+    print(True)
+else:
+    print(False)
+#print(str)
+
+2 common words
+
+def UncommonWords(A, B):
+    sent1=list(A.split())
+    sent2=list(B.split())
+    common=[]
+    for i in sent1:
+        if i in sent2:
+            sent1.remove(i)
+            sent2.remove(i)
+            common.append(i)
+    print(*sent1)
+    print(*sent2)
+    print("Common words: ",common)
+
+A = "sky is blue in colour"
+B = "raj like sky blue colour"
+UncommonWords(A, B)
+
+3 anagrams
+
+def anagrams(li):
+    dictionary={}
+    for word in li:
+        sortedword=''.join(sorted(word))
+        print(sortedword)
+        if sortedword not in dictionary:
+            dictionary[sortedword]=[word]
+        else:
+            dictionary[sortedword]+=[word]
+    return [dictionary[i] for i in dictionary]
+li=['pop','bat','tab','opp']
+print(anagrams(li))
+
+4 index of alphabet
+
+n=input("enter the string")
+m=input("enter the alphabet")
+for i in range(len(n)):
+    if(n[i]==m):
+        print(n.index(n[i]))
+    else:
+        continue
